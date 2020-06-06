@@ -15,7 +15,6 @@
                     <p class="card-text"><span class="badge badge-secondary">{{ user.email }}</span><span class="mr-auto"><a class="ml-2" href="{% url 'logout' %}">Log out.</a></span></p>
                     <hr class="bg-warning">
                     <p class="card-text"><small class="text-muted">{{user.profile.bio}}</small></p>
-                    <a href="{% url 'update_profile' %}" class="btn btn-outline-success">Update Profile</a>
                 </div>
 
                     <div class="row no-gutters justify-content-end">
