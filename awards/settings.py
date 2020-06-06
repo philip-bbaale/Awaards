@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'awardsusers',
     'crispy_forms',
     'awardsposts',
-    'djangoratings',
     
 ]
 
