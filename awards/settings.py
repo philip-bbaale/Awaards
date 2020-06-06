@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+LOGIN_REDIRECT_URL = 'awards-home'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
