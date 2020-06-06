@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'awardshome',
     'awardsusers',
     'crispy_forms',
-    'awardsposts'
+    'awardsposts',
+    'djangoratings',
 ]
 
 MIDDLEWARE = [
