@@ -17,22 +17,6 @@
                     <p class="card-text"><small class="text-muted">{{user.profile.bio}}</small></p>
                     <a href="{% url 'update_profile' %}" class="btn btn-outline-success">Update Profile</a>
                 </div>
-
-                    <div class="row no-gutters justify-content-end">
-                        <form method="POST" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <fieldset class="form-group">
-                                <legend class=" border-bottom mb-4 ">Update Profile Info</legend>
-                                <div class="card-body">
-                                    {{ u_form|crispy }}
-                                    {{ p_form|crispy }}
-                                </div>
-                            </fieldset>
-                            <div class="form-group card-body">
-                                <button class="btn btn-outline-info " type="submit">Update</button>
-                            </div>
-                        </form>
-                    </div>
             </div>
             
         </div>
