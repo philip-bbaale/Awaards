@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Profile
+from awardsposts.models import Post
 
 # Create your views here.
 @csrf_protect
@@ -40,9 +41,12 @@ def profile(request):
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
 
+    post = Post.objects.filter(author=request.user).order_by('-last_modified')
+
     context = {
         'u_form' : u_form,
         'p_form' : p_form,
+        'posts' : post
     }
 
     return render(request, 'awardsusers/profile.html', context)
