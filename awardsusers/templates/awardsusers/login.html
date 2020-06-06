@@ -1,4 +1,5 @@
 {% extends "awardshome/base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
     <div class="container">
@@ -10,7 +11,8 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">
-                                <h1>Welcome.</h1>
+                                <img src="{% static 'images/awards.jpeg' %}" alt="." class="">
+                                <h1 class="">Welcome.</h1>
                             </div>
                             <div class="col-6">
                                 {{ form|crispy }} <br><br>
