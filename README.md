@@ -1,24 +1,22 @@
 # Instagram clone
-A clone of the website for the popular photo app Instagram.
+A personal blogging website where you can create and share your opinions and other users can read and comment on them.
 
 # App Screenshots:
 
 ## Home View
-<img src="https://github.com/scrupycoco/InstagramClone/blob/master/media/screenshot1.png">
+<img src="">
 
-## Other View 
-<img src="https://github.com/scrupycoco/InstagramClone/blob/master/media/screenshot2.png">
-
-## Single view
-<img src="https://github.com/scrupycoco/InstagramClone/blob/master/media/screenshot3.png">
+## Profile View 
+<img src="">
 
 
 # User stories
-* Sign in to the application to start using.
-* Upload my pictures to the application.
-* See my profile with all my pictures.
-* Follow other users and see their pictures on my timeline.
-* Like a picture and leave a comment on it.
+* View posted projects and their details
+* Post a project to be rated/reviewed
+* Rate/ review other users' projects
+* Search for projects 
+* View projects overall score
+* View my profile page
 
 # Technologies used: 
 * Html,
