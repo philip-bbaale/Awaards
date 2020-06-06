@@ -20,9 +20,9 @@
 </head>
 <body class="bg-secondary">
 
-    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-dark border-bottom border-success">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-dark border-bottom border-white">
         <div class="container">
-            <a class="navbar-brand ml-auto text-light" href="{% url 'awards-home' %}" >
+            <a class="navbar-brand ml-auto text-white" href="{% url 'awards-home' %}" >
                 PipAwards
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,6 +33,9 @@
                 <a class="nav-item nav-link active text-light" href="{% url 'awards-about' %}">About <span class="sr-only">(current)</span></a>
               </div>
               <div class="navbar-nav ml-auto">
+                <a class="navbar-brand " href="">
+                    <img src="{% static 'icons/icons8-add_new.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+                </a>
                 {% if user.is_authenticated %}
                 <a class="nav-item nav-link text-light" href="{% url 'profile' %}">Profile</a>
                 <a class="nav-item nav-link text-light" href="{% url 'logout' %}">Logout</a>
