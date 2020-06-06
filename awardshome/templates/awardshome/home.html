@@ -3,7 +3,25 @@
 {% block content %}
 
 <div class="container">
-    <h1 class="display-1">Home</h1>
+
+        {% for post in posts %}
+        <div class="card mt-5">
+            <div class="card-header">
+                <h5 class="card-title"><span class="h3 text-danger">{{ post.project_title }}</span> <span class="text-muted">by</span> <span>{{ post.author }}</span> <img class="img-thumbnail rounded-circle" src="{{ post.author.profile.image.url }}" style="height: 50px; width: 50px;"></h5>
+            </div>
+            <div class="d-flex justify-content-center">
+                <img src="{{ post.project_image.url }}" class="card-img-top img-thumbnail mt-2" alt="{{ post.project_title }}" style="max-height: 598.02px; max-width: 598.02px;">
+            </div>
+          <div class="card-body">
+            <p class="card-text">{{ post.project_description }}</p>
+            <a href="{{ post.project_url }}" class="btn btn-outline-info" target="_blank">Visit {{ post.project_title }}</a>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated {{post.last_modified}}</small>
+          </div>
+        </div>
+        {% endfor %}
+
 </div>
 
 {% endblock %}
