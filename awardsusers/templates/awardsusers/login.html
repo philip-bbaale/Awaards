@@ -1,12 +1,12 @@
 {% extends "awardshome/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="content-section">
-        <div class="card">
+    <div class="container">
+        <div class="card mt-5">
             <form method="POST">
                 {% csrf_token %}
                 <fieldset class="form-group">
-                    <legend class=" border-bottom mb-4 card-header">Log In</legend>
+                    <legend class=" border-bottom mb-4 card-header">Log In PipAwards</legend>
                     <div class="card-body">
                         {{ form|crispy }}
                     </div>
