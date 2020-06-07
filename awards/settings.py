@@ -28,7 +28,7 @@ SECRET_KEY = '^qp)jz$*^kah-874c1*m(+4^q57fv&jr6#hhb9t)gvb6b=af6='
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'pipawards.herokuapp.com/',
+    'pipawards.herokuapp.com',
     'localhost'
 ]
 
