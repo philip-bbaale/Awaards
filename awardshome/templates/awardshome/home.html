@@ -2,6 +2,7 @@
 {% load static %}
 {% load ratings %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 <div class="container">
 
@@ -16,6 +17,36 @@
           <div class="card-body">
             <p class="card-text">{{ post.project_description }}</p>
             <a href="{{ post.project_url }}" class="btn btn-outline-info" target="_blank">Visit {{ post.project_title }}</a>
+
+            <div class="row no-gutters">
+              <form method="POST" enctype="multipart/form-data" class="col-4">
+                  {% csrf_token %}
+                  <fieldset class="form-group">
+                      <div class="card-body">
+                          {{ u_form|crispy }}
+                      </div>
+                  </fieldset>
+              </form>
+
+              <form method="POST" enctype="multipart/form-data" class="col-4">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <div class="card-body">
+                        {{ d_form|crispy }}
+                    </div>
+                </fieldset>
+            </form>
+
+            <form method="POST" enctype="multipart/form-data" class="col-4">
+              {% csrf_token %}
+              <fieldset class="form-group">
+                  <div class="card-body">
+                      {{ c_form|crispy }}
+                  </div>
+              </fieldset>
+          </form>
+
+          </div>
           </div>
           <div class="card-footer">
             <small class="text-muted">Last updated {{post.last_modified}}</small>
