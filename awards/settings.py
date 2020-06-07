@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'awardsusers',
     'crispy_forms',
     'awardsposts',
-    "pinax.ratings",
+    'star_ratings'
 ]
 
 MIDDLEWARE = [
@@ -137,10 +137,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-PINAX_RATINGS_CATEGORY_CHOICES = {
-    "app.Model": {
-        "Design": "How good is the exposure?",
-        "Usability": "How well was the app usability?",
-        "Content": "How would you rate the content?"
-    },
-}

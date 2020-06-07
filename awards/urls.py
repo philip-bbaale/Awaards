@@ -26,7 +26,7 @@ urlpatterns = [
     path('', include('awardshome.urls'), name='home'),
     path('users', include('awardsusers.urls'), name='users'),
     path('posts', include('awardsposts.urls'), name='posts'),
-    url(r"^ratings/", include("pinax.ratings.urls", namespace="pinax_ratings")),
+    path('ratings/', include('star_ratings.urls'), name='ratings'),
 ]
 
 if settings.DEBUG:
