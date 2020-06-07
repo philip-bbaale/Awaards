@@ -19,6 +19,7 @@
             <a href="{{ post.project_url }}" class="btn btn-outline-info" target="_blank">Visit {{ post.project_title }}</a>
 
             <div class="row no-gutters">
+                <p><span class="text-danger">Note:</span> <span class="text-info">Rating Function still under construction!</span></p>
               <form method="POST" enctype="multipart/form-data" class="col-4">
                   {% csrf_token %}
                   <fieldset class="form-group">
