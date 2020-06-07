@@ -19,12 +19,14 @@ from django.urls import path,include
 from awardsusers import views as user_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('awardshome.urls'), name='home'),
     path('users', include('awardsusers.urls'), name='users'),
-    path('posts', include('awardsposts.urls'), name='posts')
+    path('posts', include('awardsposts.urls'), name='posts'),
+    url(r"^ratings/", include("pinax.ratings.urls", namespace="pinax_ratings")),
 ]
 
 if settings.DEBUG:
