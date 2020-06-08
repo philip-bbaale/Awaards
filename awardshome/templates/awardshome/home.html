@@ -16,8 +16,8 @@
             </div>
           <div class="card-body">
             <p class="card-text">{{ post.project_description }}</p>
-            <a href="{{ post.project_url }}" class="btn btn-outline-info" target="_blank"><span class="text-success">Visit</span> {{ post.project_title }}</a>
-            <a href="{% url 'rating' post.pk %}" class="btn btn-outline-info"><span class="text-warning">Rate</span> {{ post.project_title }}</a>
+            <a href="{{ post.project_url }}" class="btn btn-outline-info mt-1" target="_blank"><span class="text-success">Visit</span> {{ post.project_title }}</a>
+            <a href="{% url 'rating' post.pk %}" class="btn btn-outline-info mt-1"><span class="text-warning">Rate</span> {{ post.project_title }}</a>
           </div>
           <div class="card-footer">
             <small class="text-muted">Last updated {{post.last_modified}}</small>
