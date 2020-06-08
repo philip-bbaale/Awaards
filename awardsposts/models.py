@@ -11,9 +11,14 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    design_rating = models.PositiveIntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(100)])
-    usability_rating = models.PositiveIntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(100)])
-    content_rating = models.PositiveIntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(100)])
-
+    
     def __str__(self):
         return self.project_title
+
+class Ratings(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    design_rating = models.IntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
+    usability_rating = models.IntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
+    content_rating = models.IntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
+
