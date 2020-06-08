@@ -37,3 +37,6 @@ class Ratings(models.Model):
     usability_rating = models.IntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
     content_rating = models.IntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
 
+    def __str__(self):
+        return self.design_rating
+
