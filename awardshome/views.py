@@ -9,25 +9,15 @@ from django.views.decorators.csrf import csrf_protect
 def home(request):
     post = Post.objects.all().order_by('-last_modified')
 
-    if request.method == 'POST':
-        form = RatingForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('awards-home')
-
-    else:
-        form = RatingForm()
-
-
     context={
         'posts' : post,
-        'form' : form,
     }
     return render(request, 'awardshome/home.html', context)
 
 def about(request):
     return render(request, 'awardshome/about.html', {'title':'About'})
 
+@csrf_protect
 def rating(request, pk):
     post = Post.objects.get(pk=pk)
 
