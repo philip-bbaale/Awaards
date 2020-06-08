@@ -15,6 +15,21 @@ class Post(models.Model):
     def __str__(self):
         return self.project_title
 
+    def no_of_ratings(self):
+        ratings = Ratings.objects.filter(post=self)
+        return len(ratings)
+
+    def avg_rating(self):
+        sum = 0
+        ratings = Ratings.objects.filter(post=self)
+        for rating in ratings:
+            sum += rating.stars
+
+        if len(ratings) > 0:
+            return sum/len(ratings)
+        else:
+            return 0
+
 class Ratings(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)

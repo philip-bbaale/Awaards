@@ -16,37 +16,8 @@
             </div>
           <div class="card-body">
             <p class="card-text">{{ post.project_description }}</p>
-            <a href="{{ post.project_url }}" class="btn btn-outline-info" target="_blank">Visit {{ post.project_title }}</a>
-
-            <div class="row no-gutters">
-              <form method="POST" enctype="multipart/form-data" class="col-md-4">
-                  {% csrf_token %}
-                  <fieldset class="form-group">
-                      <div class="card-body">
-                          {{ u_form|crispy }}
-                      </div>
-                  </fieldset>
-              </form>
-
-              <form method="POST" enctype="multipart/form-data" class="col-md-4">
-                {% csrf_token %}
-                <fieldset class="form-group">
-                    <div class="card-body">
-                        {{ d_form|crispy }}
-                    </div>
-                </fieldset>
-            </form>
-
-            <form method="POST" enctype="multipart/form-data" class="col-md-4">
-              {% csrf_token %}
-              <fieldset class="form-group">
-                  <div class="card-body">
-                      {{ c_form|crispy }}
-                  </div>
-              </fieldset>
-          </form><br>
-          <p class="col-12"><span class="text-info">Note:</span> <span class="text-danger">Rating Function still under construction!</span></p>
-          </div>
+            <a href="{{ post.project_url }}" class="btn btn-outline-info" target="_blank"><span class="text-success">Visit</span> {{ post.project_title }}</a>
+            <a href="{% url 'rating' post.pk %}" class="btn btn-outline-info"><span class="text-warning">Rate</span> {{ post.project_title }}</a>
           </div>
           <div class="card-footer">
             <small class="text-muted">Last updated {{post.last_modified}}</small>

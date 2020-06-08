@@ -6,11 +6,9 @@ class PostForm(forms.Form):
     project_description = forms.CharField(widget=forms.Textarea(attrs={"class": "form-control","placeholder": "Project Description"}))
     project_url = forms.CharField(widget=forms.TextInput(attrs={"class": "form-control","placeholder": "Link to live Site"}))
 
-class design_rating(forms.Form):
+class RatingForm(forms.Form):
     design_rating = forms.IntegerField()
-
-class usability_rating(forms.Form):
     usability_rating = forms.IntegerField()
-
-class content_rating(forms.Form):
     content_rating = forms.IntegerField()
+
+    
