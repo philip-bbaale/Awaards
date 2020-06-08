@@ -15,10 +15,12 @@ class Post(models.Model):
     def __str__(self):
         return self.project_title
 
+    @classmethod
     def no_of_ratings(self):
         ratings = Ratings.objects.filter(post=self)
         return len(ratings)
 
+    @classmethod
     def avg_rating(self):
         sum = 0
         ratings = Ratings.objects.filter(post=self)
