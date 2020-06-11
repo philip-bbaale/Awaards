@@ -7,6 +7,28 @@
 
     <div class="row"> 
 
+        <div class="col-md-4 mt-5">
+            <div class="row no-gutters">
+                <div class="card">
+                    <h5 class="card-header">Rate {{ post.project_title }} here.</h5>
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <div class="card-body">
+                                <div class="form-group card-body">
+                                    {{ form|crispy }}
+                                </div>
+                                <div class=" card-body mx-auto">
+                                    <button type="submit" class="btn btn-outline-success"><span class="text-warning">RATE</span></button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <h5 class="card-footer">Thank you for rating!</h5>
+                </div>
+            </div>
+        </div>
+
         <div class="col-md-8">
 
             <div class="card mt-5">
@@ -51,28 +73,6 @@
             </div>
             {% endif %}
 
-        </div>
-
-        <div class="col-md-4 mt-5">
-            <div class="row no-gutters">
-                <div class="card">
-                    <h5 class="card-header">Rate {{ post.project_title }} here.</h5>
-                    <form method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <fieldset class="form-group">
-                            <div class="card-body">
-                                <div class="form-group card-body">
-                                    {{ form|crispy }}
-                                </div>
-                                <div class=" card-body mx-auto">
-                                    <button type="submit" class="btn btn-outline-success"><span class="text-warning">RATE</span></button>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                    <h5 class="card-footer">Thank you for rating!</h5>
-                </div>
-            </div>
         </div>
         
     </div>
