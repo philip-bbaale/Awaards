@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
-from awardsposts . models import Post
+from awardsposts . models import Post, Ratings
 from awardsposts.forms import RatingForm
 from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -17,15 +19,17 @@ def home(request):
 def about(request):
     return render(request, 'awardshome/about.html', {'title':'About'})
 
+@login_required
 @csrf_protect
 def rating(request, pk):
     post = Post.objects.get(pk=pk)
+    user = request.user
 
     if request.method == 'POST':
         form = RatingForm(request.POST)
         if form.is_valid():
             rating = Ratings(
-                author = request.user,
+                author = user,
                 post = post,
                 design_rating = form.cleaned_data["design_rating"],
                 usability_rating = form.cleaned_data["usability_rating"],
@@ -34,14 +38,15 @@ def rating(request, pk):
             )
             rating.save()
 
-            return redirect('awards-home')
+            return redirect('rating')
 
     else:
         form = RatingForm()
 
-
+    ratings = Ratings.objects.filter(post=post).order_by('-created_on')
     context={
         'post' : post,
         'form' : form,
+        "ratings": ratings,
     }
     return render(request, 'awardshome/rating.html', context)
