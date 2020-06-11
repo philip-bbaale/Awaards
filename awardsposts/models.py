@@ -35,9 +35,9 @@ class Post(models.Model):
 class Ratings(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    design_rating = models.IntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
-    usability_rating = models.IntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
-    content_rating = models.IntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
+    design_rating = models.PositiveIntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
+    usability_rating = models.PositiveIntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
+    content_rating = models.PositiveIntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
     comment = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 

@@ -24,7 +24,16 @@ def rating(request, pk):
     if request.method == 'POST':
         form = RatingForm(request.POST)
         if form.is_valid():
-            form.save()
+            rating = Ratings(
+                author = request.user,
+                post = post,
+                design_rating = form.cleaned_data["design_rating"],
+                usability_rating = form.cleaned_data["usability_rating"],
+                content_rating = form.cleaned_data["content_rating"],
+                comment = form.cleaned_data["comment"],
+            )
+            rating.save()
+
             return redirect('awards-home')
 
     else:
