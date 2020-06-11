@@ -38,7 +38,9 @@ class Ratings(models.Model):
     design_rating = models.IntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
     usability_rating = models.IntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
     content_rating = models.IntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
+    comment = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.design_rating
+        return self.author
 
