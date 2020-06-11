@@ -38,8 +38,6 @@ def rating(request, pk):
             )
             rating.save()
 
-            return redirect('rating')
-
     else:
         form = RatingForm()
 
