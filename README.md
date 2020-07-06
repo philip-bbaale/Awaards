@@ -6,7 +6,7 @@ A personal blogging website where you can create and share your opinions and oth
 ## Home View
 <img src="https://github.com/scrupycoco/Awaards/blob/master/media/screenshot1.png">
 
-## Post View 
+## Profile View 
 <img src="https://github.com/scrupycoco/Awaards/blob/master/media/screenshot2.png">
 
 
