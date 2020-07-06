@@ -4,10 +4,10 @@ A personal blogging website where you can create and share your opinions and oth
 # App Screenshots:
 
 ## Home View
-<img src="">
+<img src="https://github.com/scrupycoco/Awaards/blob/master/media/screenshot1.png">
 
-## Profile View 
-<img src="">
+## Post View 
+<img src="https://github.com/scrupycoco/Awaards/blob/master/media/screenshot2.png">
 
 
 # User stories
